@@ -19,8 +19,9 @@
 	<bean id="messageSource" class="fr.hoteia.qalingo.core.i18n.message.ExtReloadableResourceBundleMessageSource">
 		<property name="basenames">
 			<list>
-				<value>classpath:qalingo-common-wording</value>
 				<value>classpath:qalingo-bo-wording</value>
+				<value>classpath:qalingo-email-wording</value>
+				<value>classpath:qalingo-common-wording</value>
 				<value>classpath:qalingo-countries</value>
 				<value>classpath:qalingo-languages</value>
 				<value>classpath:qalingo-titles</value>
