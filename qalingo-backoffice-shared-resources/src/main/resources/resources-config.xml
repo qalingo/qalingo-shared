@@ -19,8 +19,12 @@
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:common-qalingo-*.properties</value>
-                <value>classpath:specific-qalingo-*.properties</value>
+				<!-- Looks like wildcard classpath:common-qalingo-*.properties doesn't work with catalina.properties shared.loader -->
+				<value>classpath:common-qalingo-config.properties</value>
+				<value>classpath:common-qalingo-jdbc.properties</value>
+				<value>classpath:common-qalingo-mail.properties</value>
+				<value>classpath:common-qalingo-velocity.properties</value>
+				<value>classpath:specific-qalingo-env.properties</value>
             </list>
         </property>
     </bean>
