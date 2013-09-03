@@ -1,0 +1,19 @@
+##
+## Wording Velocity Macros
+##
+
+## Respect the compact indentation to evict whitespace and carriage return
+#macro(replaceWordingKeyParams $sentence $values)#set( $returnValue = "#replaceWordingKeyParamsAndTrim($sentence $values)")$returnValue.trim()#end
+
+#macro(replaceWordingKeyParamsAndTrim $sentence $values)
+	#set ($result = $sentence)
+	#set($index = 0)
+	#foreach( $value in $values )
+		#if ($value)
+			#set($key = "{$index}")
+			#set($result = $result.replace($key, "$value"))
+			#set($index = $index + 1)
+		#end
+	#end
+	$result
+#end
