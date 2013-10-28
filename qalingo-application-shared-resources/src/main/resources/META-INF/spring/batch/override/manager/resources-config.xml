@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Most of the code in the Qalingo project is copyrighted Hoteia and licensed
+    under the Apache License Version 2.0 (release version 0.7.0)
+            http://www.apache.org/licenses/LICENSE-2.0
+
+                      Copyright (c) Hoteia, 2012-2013
+    http://www.hoteia.com - http://twitter.com/hoteia - contact@hoteia.com
+
+
+-->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--  Use this to set additional properties on beans at run time -->
+	<bean id="placeholderProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:/org/springframework/batch/admin/bootstrap/batch.properties</value>
+				<value>classpath:common-qalingo-batch-default.properties</value>
+				<value>classpath:common-qalingo-batch-mysql.properties</value>
+				<value>classpath:common-qalingo-config.properties</value>
+				<value>classpath:common-qalingo-jdbc.properties</value>
+				<value>classpath:common-qalingo-mail.properties</value>
+				<value>classpath:common-qalingo-velocity.properties</value>
+				<value>classpath:common-qalingo-jms.properties</value>
+				<value>classpath:specific-qalingo-batch.properties</value>
+			</list>
+		</property>
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="ignoreUnresolvablePlaceholders" value="false" />
+		<property name="order" value="1" />
+	</bean>
+	
+	
+</beans>
