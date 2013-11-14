@@ -16,7 +16,7 @@
             http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
     	
 	<!-- Application Message Bundle -->
-	<bean id="messageSource" class="fr.hoteia.qalingo.core.i18n.message.ExtReloadableResourceBundleMessageSource">
+	<bean id="messageSource" class="org.hoteia.qalingo.core.i18n.message.ExtReloadableResourceBundleMessageSource">
 		<property name="basenames">
 			<list>
 				<value>classpath:qalingo-fo-wording</value>
