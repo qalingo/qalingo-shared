@@ -25,6 +25,7 @@
 				<value>classpath:common-qalingo-mail.properties</value>
 				<value>classpath:common-qalingo-velocity.properties</value>
 				<value>classpath:common-qalingo-jms.properties</value>
+				<value>classpath:common-qalingo-solr.properties</value>
 				<value>classpath:specific-qalingo-batch.properties</value>
 			</list>
 		</property>
