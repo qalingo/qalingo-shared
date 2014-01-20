@@ -20,6 +20,7 @@
 		<property name="basenames">
 			<list>
 				<value>classpath:qalingo-fo-wording</value>
+				<value>classpath:qalingo-document-wording</value>
 				<value>classpath:qalingo-email-wording</value>
 				<value>classpath:qalingo-common-wording</value>
 				<value>classpath:qalingo-countries</value>
