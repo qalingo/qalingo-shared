@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tool>
-	<key>number</key>
-	<scope>application</scope>
-	<class>org.apache.velocity.tools.generic.NumberTool</class>
-	<parameter name="format" value="#0" />
-</tool>
+<toolbox>
+  <tool>
+     <key>dateTool</key>
+     <scope>application</scope>
+     <class>org.apache.velocity.tools.generic.DateTool</class>
+  </tool>
+  <tool>
+     <key>mathTool</key>
+     <scope>application</scope>
+     <class>org.apache.velocity.tools.generic.MathTool</class>
+  </tool>
+  <tool>
+     <key>numberTool</key>
+     <scope>application</scope>
+     <class>org.apache.velocity.tools.generic.NumberTool</class>
+  </tool>
+  <tool>
+     <key>iteratorTool</key>
+     <scope>application</scope>
+     <class>org.apache.velocity.tools.generic.IteratorTool</class>
+  </tool>
+  <tool>
+     <key>listTool</key>
+     <scope>application</scope>
+     <class>org.apache.velocity.tools.generic.ListTool</class>
+  </tool>
+  <tool>
+     <key>stringUtils</key>
+     <scope>application</scope>
+     <class>org.apache.velocity.util.StringUtils</class>
+  </tool>
+  <tool>
+    <key>escapeTool</key>
+    <scope>application</scope>
+    <class>org.apache.velocity.tools.generic.EscapeTool</class>
+  </tool>  
+  <tool>
+    <key>linkTool</key>
+    <scope>request</scope>
+    <class>org.apache.velocity.tools.view.tools.LinkTool</class>
+  </tool>
+</toolbox>

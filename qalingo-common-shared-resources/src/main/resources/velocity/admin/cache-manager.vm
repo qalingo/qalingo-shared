@@ -1,0 +1,88 @@
+#set( $layout = "/velocity/admin/layout.vm" )
+## Display cache information
+
+<h1>$!title</h1>
+
+<h2>Host: $hostname</h2>
+
+<h3>Statistics</h3>
+<table cellspacing="8" cellpadding="0">
+    <thead>
+	<tr>
+	    <th>Cache name</th>
+	    <th>Entries</th>
+	    #if ($hasMemorySize)
+		<th>Memory Size</th>
+	    #end
+	    <th>Cache Hits</th>
+	    <th>Misses</th>
+	    <th>Hit Rate</th>
+	    <th>Evictions</th>
+	    <th>Avg. get Time</th>
+	    <th>InMemoryHits</th>
+	    <th>MemoryStoreObjectCount</th>
+	    <th>OnDiskHits</th>
+	    <th>diskStoreObjectCount</th>
+		<th>offHeapStoreObjectCount</th>
+	</tr>
+    </thead>
+    <tbody>
+		#foreach ($cache in $caches)
+			#set($stats = $cache.statistics)
+			#set($totalHits = $mathTool.add($stats.cacheHits, $stats.cacheMisses))
+			#if($totalHits == 0)
+			#set($ratio = 0)
+			#else
+			#set($ratio = $mathTool.div($stats.cacheHits, $totalHits))
+			#end
+			<tr>
+				<td>$cache.name</td>
+				<td>$stats.objectCount</td>
+				#if ($hasMemorySize)
+					<td>$mathTool.roundTo(1, $mathTool.div($cache.calculateInMemorySize(), 1048576)) MB</td>
+				#end
+				<td>$stats.cacheHits</td>
+				<td>$stats.cacheMisses</td>
+				<td>$numberTool.format("percent", $ratio)</td>
+				<td>$stats.evictionCount</td>
+				<td>$stats.averageGetTime</td>
+				<td>$stats.inMemoryHits</td>
+				<td>$stats.memoryStoreObjectCount</td>
+				<td>$stats.onDiskHits</td>
+				<td>$stats.diskStoreObjectCount</td>
+				<td>$stats.offHeapStoreObjectCount</td>
+			</tr>
+	    #end
+    </tbody>
+</table>
+<hr/>
+<h3>Configuration</h3>
+<table>
+    <thead>
+	<tr>
+	    <th>Cache name</th>
+	    <th>Active</th>
+	    <th>MaxElementsInMemory</th>
+	    <th>MaxElementsOnDisk</th>
+	    <th>Statistics</th>
+	    <th>TimeToIdleSeconds</th>
+	    <th>TimeToLiveSeconds</th>
+	    <th>Stats Accuracy</th>
+	</tr>
+    </thead>
+    <tbody>
+	#foreach ($cache in $caches)
+	    <tr>
+		<td>$cache.name</td>
+		<td>#if($cache.isDisabled()) False #else True #end</td>
+		#set($conf = $cache.cacheConfiguration)
+		<td>$conf.maxElementsInMemory</td>
+		<td>$conf.maxElementsOnDisk</td>
+		<td>$conf.statistics</td>
+		<td>$conf.timeToIdleSeconds</td>
+		<td>$conf.timeToLiveSeconds</td>
+		<td>$cache.statisticsAccuracy</td>
+	    </tr>
+	#end
+    </tbody>
+</table>
