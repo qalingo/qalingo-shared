@@ -21,14 +21,63 @@
 		<tag>HEAD</tag>
 	</scm>
 
+	<properties>
+		<root.basedir>${project.basedir}</root.basedir>
+	</properties>
+		
 	<modules>
 		<module>qalingo-common-shared-resources</module>
 		<module>qalingo-application-shared-resources</module>
 		<module>qalingo-backoffice-shared-resources</module>
 		<module>qalingo-frontoffice-shared-resources</module>
 	</modules>
-	
+
 	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.mycila.maven-license-plugin</groupId>
+				<artifactId>maven-license-plugin</artifactId>
+				<configuration>
+					<basedir>${basedir}</basedir>
+					<header>${root.basedir}/misc-license/license-qalingo.txt</header>
+					<quiet>false</quiet>
+					<failIfMissing>true</failIfMissing>
+					<aggregate>false</aggregate>
+					<includes>
+						<include>src/**</include>
+						<include>**/test/**</include>
+					</includes>
+					<excludes> 
+						<exclude>target/**</exclude>
+						<exclude>.clover/**</exclude>
+						<exclude>**/library/**</exclude>
+						<exclude>**/bootstrap/**</exclude>
+						<exclude>**/VAADIN/**</exclude>
+					</excludes>
+					<useDefaultExcludes>true</useDefaultExcludes>
+					<mapping>
+						<jwc>XML_STYLE</jwc>
+						<application>XML_STYLE</application>
+						<myFileExtension>JAVADOC_STYLE</myFileExtension>
+					</mapping>
+					<useDefaultMapping>true</useDefaultMapping>
+					<strictCheck>true</strictCheck>
+					<properties>
+						<year>${project.inceptionYear}</year>
+						<email>contact@hoteia.com</email>
+						<license.version>${releaseVersion}</license.version>
+					</properties>
+					<encoding>UTF-8</encoding>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>format</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -50,6 +99,15 @@
 							</configuration>
 						</execution>
 					</executions>
+				</plugin>
+				<plugin>
+					<groupId>com.mycila.maven-license-plugin</groupId>
+					<artifactId>maven-license-plugin</artifactId>
+					<version>1.9.0</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.3.2</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>

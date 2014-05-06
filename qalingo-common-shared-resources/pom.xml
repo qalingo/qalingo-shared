@@ -18,6 +18,10 @@
 		<url>http://www.hoteia.com</url>
 	</organization>
 	
+	<properties> 
+		<root.basedir>${project.parent.basedir}</root.basedir> 
+	</properties>
+	
 	<build>
 		<plugins>
 			<plugin>
