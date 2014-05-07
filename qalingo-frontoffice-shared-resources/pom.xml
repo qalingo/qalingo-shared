@@ -3,10 +3,10 @@
 	<parent>
 		<groupId>org.hoteia.qalingo</groupId>
 		<artifactId>qalingo-shared</artifactId>
-		<version>0.8.0</version>
+		<version>0.8.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>qalingo-frontoffice-shared-configuration</artifactId>
-	<version>0.8.0</version>
+	<version>0.8.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>{Q} Commerce Solution Frontoffice Config. Bundle</name>
 	<description>{Q} Commerce Solution Frontoffice Config. Bundle</description>
