@@ -8,4 +8,15 @@
  *
  *#
 #set( $layout = "/velocity/admin/layout.vm" )
+## Display cache information
+
+<h1>$!title</h1>
+
+<h2>Host: $!hostname</h2>
+
 Velocity cache is invalidated.
+
+<hr/>
+Velocity cache is invalidated.
+
+
