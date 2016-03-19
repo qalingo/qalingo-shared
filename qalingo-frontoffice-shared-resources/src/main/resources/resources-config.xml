@@ -28,6 +28,7 @@
 				<value>classpath:common-qalingo-solr.properties</value>
 				<value>classpath:common-qalingo-cache.properties</value>
 				<value>classpath:specific-qalingo-env.properties</value>
+				<value>classpath:build.properties</value>
             </list>
         </property>
 		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
