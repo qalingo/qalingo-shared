@@ -3,10 +3,10 @@
 	<parent>
 		<groupId>org.hoteia.qalingo</groupId>
 		<artifactId>qalingo-shared</artifactId>
-		<version>0.9.0</version>
+		<version>0.9.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>qalingo-common-shared-configuration</artifactId>
-	<version>0.9.0</version>
+	<version>0.9.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>{Q} Commerce Solution Common Config. Bundle</name>
 	<description>{Q} Commerce Solution Common Config. Bundle</description>
